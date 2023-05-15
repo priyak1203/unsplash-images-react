@@ -74,7 +74,8 @@ body {
   line-height: 1;
 }
 
-h1 {
+h1,
+h4 {
   margin: 0;
   font-weight: 400;
   line-height: 1;
@@ -84,6 +85,10 @@ h1 {
 
 h1 {
   font-size: clamp(2rem, 5vw, 5rem); /* Large heading */
+}
+
+h4 {
+  font-size: clamp(1rem, 2vw, 2rem); /* Extra small heading */
 }
 
 /* 
@@ -172,11 +177,35 @@ Search Form Styles
   color: var(--black);
 }
 
-/*
-  
+/* 
+================
+Gallery Styles
+================
+*/
 
- 
+.image-container {
+  width: var(--view-width);
+  max-width: var(--max-width);
+  margin: 3rem auto;
+  display: grid;
+  gap: 2rem;
+}
 
- 
- 
-   */
+.img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  height: 10rem;
+}
+
+@media (min-width: 768px) {
+  .image-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 992px) {
+  .image-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
