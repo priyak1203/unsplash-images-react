@@ -2,12 +2,32 @@
           Variables
 ================================== */
 :root {
+  /* colors */
+  --primary-300: #a29dff;
+  --primary-500: #645cff;
+  --primary-700: #3c3799;
+
   /* grey */
   --grey-50: #f8fafc;
+  --grey-200: #e2e8f0;
+  --grey-300: #cbd5e1;
   --grey-900: #0f172a;
 
+  /* rest of the colors */
+  --black: #222;
+  --white: #fff;
+
+  /* rest of the vars */
+  --borderRadius: 0.25rem;
+  --letterSpacing: 1px;
   --max-width: 1120px;
+  --fixed-width: 600px;
   --view-width: 90vw;
+
+  /* box shadow*/
+  --shadow-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-3: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
 
   /* dark mode setup */
   --dark-mode-bg-color: #333;
@@ -32,12 +52,12 @@ html {
   font-size: 100%;
 } /*16px*/
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --backgroundColor: var(--dark-mode-bg-color);
     --textColor: var(--dark-mode-text-color);
   }
-}
+} */
 
 .dark-theme {
   --backgroundColor: var(--dark-mode-bg-color);
@@ -52,6 +72,18 @@ body {
     Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-weight: 400;
   line-height: 1;
+}
+
+h1 {
+  margin: 0;
+  font-weight: 400;
+  line-height: 1;
+  text-transform: capitalize;
+  letter-spacing: var(--letterSpacing);
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 5rem); /* Large heading */
 }
 
 /* 
@@ -83,3 +115,68 @@ Toggle Styles
   font-size: 1.5rem;
   color: var(--textColor);
 }
+
+/* 
+================
+Search Form Styles
+================
+*/
+
+.title {
+  text-align: center;
+  color: var(--primary-500);
+}
+
+.search-form {
+  width: var(--view-width);
+  max-width: var(--fixed-width);
+  margin: 0 auto;
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+
+.search-input {
+  background-color: pink;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  border-radius: var(--borderRadius);
+  background: var(--backgroundColor);
+  border: 1px solid var(--grey-200);
+  border-color: var(--grey-300);
+  transition: var(--darkModeTransition);
+  color: var(--textColor);
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.btn {
+  cursor: pointer;
+  color: var(--white);
+  background: var(--primary-500);
+  border: transparent;
+  border-radius: var(--borderRadius);
+  letter-spacing: var(--letterSpacing);
+  padding: 0.375rem 0.75rem;
+  box-shadow: var(--shadow-1);
+  transition: var(--transition);
+  text-transform: capitalize;
+  display: inline-block;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.btn:hover {
+  background: var(--primary-300);
+  box-shadow: var(--shadow-3);
+  color: var(--black);
+}
+
+/*
+  
+
+ 
+
+ 
+ 
+   */
