@@ -98,8 +98,8 @@ Toggle Styles
 */
 
 .toggle-container {
-  max-width: var(--max-width);
   width: var(--view-width);
+  max-width: var(--max-width);
   padding: 1rem 0;
   margin: 0 auto;
   display: flex;
@@ -142,7 +142,6 @@ Search Form Styles
 }
 
 .search-input {
-  background-color: pink;
   width: 100%;
   padding: 0.375rem 0.75rem;
   border-radius: var(--borderRadius);
